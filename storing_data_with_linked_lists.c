@@ -29,3 +29,18 @@ Liste *initialisation()
 
     return liste;
 }
+
+void insertion(Liste *liste, int nvNombre)
+{
+    /* Création du nouvel élément */
+    Element *nouveau = malloc(sizeof(*nouveau));
+    if (liste == NULL || nouveau == NULL)
+    {
+        exit(EXIT_FAILURE);
+    }
+    nouveau->nombre = nvNombre;
+
+    /* Insertion de l'élément au début de la liste */
+    nouveau->suivant = liste->premier;
+    liste->premier = nouveau;
+}
