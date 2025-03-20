@@ -59,3 +59,20 @@ void suppression(Liste *liste)
         free(aSupprimer);
     }
 }
+
+void afficherListe(Liste *liste)
+{
+    if (liste == NULL)
+    {
+        exit(EXIT_FAILURE);
+    }
+
+    Element *actuel = liste->premier;
+
+    while (actuel != NULL)
+    {
+        printf("%d -> ", actuel->nombre);
+        actuel = actuel->suivant;
+    }
+    printf("NULL\n");
+}
