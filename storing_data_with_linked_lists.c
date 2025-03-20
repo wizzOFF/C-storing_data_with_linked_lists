@@ -1,4 +1,4 @@
-
+/*
 typedef struct Element Element;
 struct Element
 {
@@ -11,3 +11,21 @@ struct Liste
 {
     Element *premier;
 };
+*/
+
+Liste *initialisation()
+{
+    Liste *liste = malloc(sizeof(*liste));
+    Element *element = malloc(sizeof(*element));
+
+    if (liste == NULL || element == NULL)
+    {
+        exit(EXIT_FAILURE);
+    }
+
+    element->nombre = 0;
+    element->suivant = NULL;
+    liste->premier = element;
+
+    return liste;
+}
